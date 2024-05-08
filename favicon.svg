@@ -1,0 +1,6 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Rectangle -->
+    <rect width="100" height="100" rx="14" fill="#E8AEAE" />
+    <!-- Letter G -->
+    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" font-size="50" fill="#fff" font-family="Arial">G</text>
+</svg>

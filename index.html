@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name='viewport'
+    content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi, minimal-ui' />
+  <title>Gourav Pandey</title>
+  <meta property="og:title" content="Gourav Pandey" />
+  <meta name="description" content="Gourav Pandey 3D Portfolio" />
+  <meta property="og:description" content=" Gourav Pandey 3D Portfolio" />
+  <meta name="twitter:card" content="summary" />
+</head>
+
+<body class="light-theme">
+  <div class="experience">
+    <canvas class="experience-canvas"></canvas>
+  </div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-wrapper">
+      <div class="loading">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" asscroll-container>
+
+    <div class="toggle-bar">
+      <div class="sun-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+          <path fill="currentColor"
+            d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z" />
+        </svg>
+      </div>
+      <button class="toggle-button">
+        <div class="toggle-circle"></div>
+      </button>
+      <div class="moon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+          <path fill="currentColor"
+            d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="page-wrapper" asscroll>
+      <section class="hero">
+        <div class="hero-wrapper">
+
+          <!-- Intro Stuff -->
+          <div class="intro-text">Welcome to my portfolio!</div>
+          <div class="arrow-svg-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <path fill="currentColor"
+                d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z" />
+            </svg>
+          </div>
+
+          <div class="hero-main">
+            <h1 class="hero-main-title">Gourav Pandey</h1>
+            <p class="hero-main-description">Aspiring Software Developer</p>
+          </div>
+
+          <div class="hero-second">
+            <p class="hero-second-subheading first-sub">Gourav Pandey</p>
+            <p class="hero-second-subheading second-sub">Portfolio</p>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="first-move section-margin"></div>
+
+      <section class="first-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="section-intro-wrapper">
+          <h1 class="section-title">
+            <span class="section-title-text">About Me</span>
+            <div class="section-title-decoration styleOne"></div>
+            <div class="section-title-decoration styleTwo"></div>
+            <div class="section-title-decoration styleThree"></div>
+          </h1>
+          <span class="section-number">01</span>
+        </div>
+
+
+        <div class="section-detail-wrapper">
+          <!-- <h3 class="section-heading">Hello!</h3> -->
+          <p class="section-text">My name is Gourav Pandey and I'm currently learning Machine Learning. My passion lies
+            in develop Reliable products and I am actively seeking internships or entry-level positions within the
+            field.</p>
+          <p class="section-text">I have a deep foundational understanding of Web application penetration testing,
+            classic encryption and cryptography, as well as operating system and network security such as intrusion
+            detection/prevention systems. I am well-versed in not only the application of modern defense solutions, but
+            also the development and testing of custom security protocols.</p>
+          <p class="section-text">I am always looking for an opportunity to demonstrate my knowledge of cyber security
+            and to collaborate with others in the field. I am eager to make a contribution to any computer security
+            initiatives, and I believe my technical expertise combined with my willingness to learn and act quickly make
+            me an excellent candidate for any cyber-security related positions.</p>
+          <p class="section-text"> I love creating Front-End Projects and love doing real life projects✌️.</p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h1 id="education">EDUCATION</h1>
+          <br>
+          <br>
+          <br>
+          <p><img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/9/91/Rajiv_Gandhi_Institute_of_Petroleum_Technology.png/220px-Rajiv_Gandhi_Institute_of_Petroleum_Technology.png"
+              alt="Rajiv Gandhi Institute of Petroluem Technology"></p>
+          <br>
+          <br>
+
+          <br>
+          <br>
+          <h4 id="bachelor-of-technology-Rajiv-Gandhi-Institute-of-Petroluem-Technology">Bachelor of Technology In Rajiv
+            Gandhi Institute of Petroluem Technology</h4>
+          <br>
+          <br>
+          <p>CGPA - 7.08</p>
+          <br>
+          <p>[2021 - 2025]</p>
+        </div>
+      </section>
+
+      <div class="second-move section-margin"></div>
+
+      <section class="second-section section right">
+        <div class="progress-wrapper progress-bar-wrapper-right">
+          <div class="progress-bar blue-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper blue-text blue-border">
+          <h1 class="section-title blue-text blue-border">
+            <span class="section-title-text blue-text">My Projects</span>
+            <div class="section-title-decoration styleOne blue-border"></div>
+            <div class="section-title-decoration styleTwo blue-border"></div>
+            <div class="section-title-decoration styleThree blue-background blue-border"></div>
+          </h1>
+          <span class="section-number blue-text">02</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+
+
+          <h3 class="section-heading">Cloud-based Blood Bank App</h3>
+          <p class="section-text">The Cloud-based Blood Bank App is a MERN (MongoDB, Express.js, React.js, Node.js)
+            stack project aimed at facilitating blood donation and management processes in healthcare systems.</p>
+          <p class="section-text"> It provides a centralized platform where blood donors, recipients, and healthcare
+            professionals can interact efficiently to fulfill blood transfusion requirements.</p>
+          <br>
+          <div style="text-align: center;">
+            <picture>
+              <img src="https://media1.tenor.com/m/rJb6SYPVAi4AAAAC/giving-blood-blood-donation.gif" width="500">
+            </picture>
+          </div>
+          <br>
+          <div style="text-align: center;">
+            <p>
+              <a href="https://github.com/gouravpandey009/cloud-based-blood-bank-app" title="Cloud-based Blood Bank"
+                style="display: inline-block; text-decoration: none; background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px;">
+                See Project
+              </a>
+            </p>
+          </div>
+
+
+
+          <h3 class="section-heading">Sentiment Detector GUI Application using Tkinter</h3>
+          <p class="section-text">Python offers multiple options for developing a GUI (Graphical User Interface). Out of
+            all the GUI methods, Tkinter is the most commonly used method. Python with Tkinter outputs the fastest and
+            easiest way to create GUI applications. In this article, we will learn how to create a Sentiment Detector
+            GUI application using Tkinter, with a step-by-step guide.</p>
+          <p class="section-text">The core of this application lies in its ability to analyze sentiment, achieved
+            through integration with natural language processing libraries like NLTK or TextBlob. Robust error handling
+            mechanisms are imperative to ensure seamless user experience, addressing scenarios of invalid input or
+            analysis errors gracefully. Rigorous testing and refinement are pivotal stages to guarantee accurate
+            functionality across diverse inputs, fostering user trust and satisfaction.</p>
+          <br>
+          <div style="text-align: center;">
+            <picture>
+              <img src="https://i.pinimg.com/originals/52/ad/6a/52ad6a11c1dcb1692ff9e321bd520167.gif" width="400"
+                alt="Sentiment Detector">
+            </picture>
+          </div>
+          <br>
+          <div style="text-align: center;">
+            <p>
+              <a href="https://github.com/gouravpandey009/Sentiment_Detector" title="Sentiment Detector"
+                style="display: inline-block; text-decoration: none; background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px;">
+                See Project
+              </a>
+            </p>
+          </div>
+
+
+
+
+
+
+
+          <div style="text-align: center; margin-top: 20px;">
+            <h3 class="section-heading">Face Detection</h3>
+            <p class="section-text">Face Detection and Tracking is a computer vision project that enables real-time
+              detection and tracking of faces in video streams. The project is implemented using Python and OpenCV,
+              leveraging the Haar Cascade classifier for face detection and object tracking algorithms like Kalman
+              Filters or centroid tracking for continuous tracking of detected faces.</p>
+            <p class="section-text">The program aims to enable real-time detection and continuous tracking of faces,
+              addressing fundamental needs in various applications such as video surveillance, human-computer
+              interaction, augmented reality, and biometric security systems. Leveraging Python and OpenCV, it employs
+              the efficient Haar Cascade classifier for face detection, ensuring accuracy and reliability in identifying
+              facial features. Through the implementation of sophisticated object tracking algorithms like Kalman
+              Filters or centroid tracking, the program dynamically monitors the movement of detected faces over time,
+              providing seamless tracking capabilities.</p>
+            <p class="section-text">A user-friendly interface complements the functionality, offering a visually
+              intuitive display of live video feeds augmented with real-time face detection and tracking overlays. With
+              clear documentation detailing implementation steps, usage instructions, dependencies, and potential
+              applications, the program encourages contributions from the community to enhance its functionality and
+              performance. Under an open-source license, the program fosters collaboration and innovation, empowering
+              users to freely utilize, modify, and distribute it for diverse needs and contexts.</p>
+            <br>
+            <br>
+            <picture>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Ty113VUvpbA9mFxdr6xlvd_6VRTjdv0zDg&s"
+                width="500" style="display: block; margin: 0 auto;">
+            </picture>
+            <br>
+            <br>
+            <p>
+              <a href="https://github.com/gouravpandey009/Face_Detection" title="Face Detection"
+                style="display: inline-block; text-decoration: none; background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px;">
+                See Project
+              </a>
+            </p>
+          </div>
+
+
+
+
+
+          <div style="text-align: center; margin-top: 20px;">
+            <h3 class="section-heading">Iris-Dataset-Analysis</h3>
+            <p class="section-text">This project aims to analyze the famous Iris dataset and build a machine learning
+              model for classifying iris flowers into different species based on their features. The Iris dataset is
+              widely used in machine learning and serves as a good starting point for beginners due to its simplicity
+              and clear class separation.</p>
+            <p class="section-text">Through visualization techniques utilizing libraries like seaborn and matplotlib,
+              one can gain valuable insights into the data's distribution and potential patterns. These visualizations
+              offer a nuanced understanding of relationships between features and can help identify any outliers or
+              peculiarities within the dataset. Moreover, such analysis aids in preparing the data for subsequent
+              modeling tasks, such as classification or clustering.</p>
+            <br>
+            <picture>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfj7z6S_S-eqDua1W340lufIiJvas546HAtwcWvPfY4A&s"
+                width="500">
+            </picture>
+            <br>
+            <br>
+            <p>
+              <a href="https://github.com/gouravpandey009/Iris-Dataset-Analysis" title="Iris-Dataset-Analysis"
+                style="display: inline-block; text-decoration: none; background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px;">
+                See Project
+              </a>
+            </p>
+          </div>
+
+
+
+          <h3 class="section-heading">ATM Management System</h3>
+          <p class="section-text">ATMs are Automated Teller Machines that are used to carry out day-to-day financial
+            transactions. They are convenient and easy to use, allowing consumers to perform quick self-service
+            transactions.</p>
+          <p class="section-text">Automated Teller Machines (ATMs) are indispensable tools for day-to-day financial
+            transactions, offering convenience and ease of use. In this article, we delve into the ATM Management System
+            in C++, a comprehensive application mirroring the functionalities of real-world ATMs.</p>
+          <div style="margin-top: 20px; margin-bottom: 20px; text-align: center;">
+            <img src="https://media1.tenor.com/m/x_fG1_wtXBwAAAAC/digibyte-dgb.gif" width="500" alt="ATM GIF">
+            <p style="margin-top: 20px;">
+              <a href="https://github.com/gouravpandey009/ATM_Mangement_System" title="ATM Management System"
+                style="text-decoration: none; background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px;">
+                See Project
+              </a>
+            </p>
+          </div>
+
+
+
+
+
+
+        </div>
+      </section>
+
+      <div class="third-move section-margin"></div>
+
+      <section class="third-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar green-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper green-text green-border">
+          <h1 class="section-title green-text green-border">
+            <span class="section-title-text green-text">Work Experience</span>
+            <div class="section-title-decoration styleOne green-border"></div>
+            <div class="section-title-decoration styleTwo green-border"></div>
+            <div class="section-title-decoration styleThree green-background green-border"></div>
+          </h1>
+          <span class="section-number green-text">03</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <p><img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHdTsfU6r4jxMfmGhrQa0oc2DS4I9uvrRf8PTheBT2g&s"
+              alt="Virtual Software Intern"></p>
+          <br>
+          <br>
+          <h4
+            id="-jp-morgan-chase-and-company-https-www-linkedin-com-company-official-cis-trk-public_profile_experience-item_profile-section-card_subtitle-click-">
+            <a href="https://www.jpmorganchase.com">JP Morgan Chase and Company</a>
+          </h4>
+
+          <br>
+          <p><strong>Software Engineering Virtual Internship</strong> [ Dec 2022 - Dec 2022 ]</p>
+          <br>
+          <p>Try out what real work is like in the technology team at JP Morgan Chase & Co. Fast track to the tech team
+            with your work.</p>
+
+          <p>Try your hand at real-world challenges within the technology team at JP Morgan Chase & Co. Propel your
+            career forward by making impactful contributions to our tech initiatives.</p>
+
+          <p>Module 1 Task: Objective: Develop a system to process stock A and stock B’s price data feeds, facilitating
+            analysis for optimal trading timing.</p>
+
+          <p>Module 2 Task: Objective: Enhance Perspective to automate graph updates, integrating Task 1’s code for
+            seamless data retrieval from the server application.</p>
+
+          <p>Module 3 Task: Objective: Utilize Perspective to create visually appealing charts for traders’ dashboards,
+            providing clear and intuitive data visualization for monitoring trading strategies.</p>
+
+          <p>Your mission: Elevate the existing live chart to meet evolving needs and enhance usability.</p>
+
+          <br>
+          <br>
+
+
+        </div>
+      </section>
+
+
+      <div class="second-move section-margin"></div>
+
+      <section class="second-section section right">
+        <div class="progress-wrapper progress-bar-wrapper-right">
+          <div class="progress-bar blue-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper blue-text blue-border">
+          <h1 class="section-title blue-text blue-border">
+            <span class="section-title-text blue-text">CONTACT</span>
+            <div class="section-title-decoration styleOne blue-border"></div>
+            <div class="section-title-decoration styleTwo blue-border"></div>
+            <div class="section-title-decoration styleThree blue-background blue-border"></div>
+          </h1>
+          <span class="section-number blue-text">04</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">Linkedin</h3>
+          <p class="section-text">If you'd like to get in touch, please feel free to connect with me on LinkedIn. On
+            LinkedIn, I am active in discussions about Front End Development , Full Stack Development , Cloud Computing
+            , Block-Chain , Machine Learning</p>
+          <br>
+          <p><a href="https://www.linkedin.com/in/gouravpandey09/"><img
+                src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&amp;logoColor=white"
+                alt="LinkedIn"></a> </p>
+          <h3 class="section-heading">Github</h3>
+          <p class="section-text">I am an active contributor to open-source projects on GitHub. You can explore my
+            repositories to see my latest projects and contributions. I am always open to collaboration and feedback
+            from the community.
+            As a recent graduate with a Bachelor of Technology in Computer Science Engineering from Rajiv Gandhi
+            Institute of Petroleum Technology, I was eager to leverage my technical expertise and passion for software
+            development in a dynamic and collaborative environment. With a solid foundation in HTML, CSS, JavaScript,
+            Python, and C/C++, along with hands-on experience in software development tools like Git and GitHub, I was
+            well-equipped to contribute effectively to your team.
+            During my tenure as a Software Developer Intern at JP Morgan Chase & Co in 2022, I honed my skills in web
+            application development, collaborating closely with a talented team to deliver innovative solutions within
+            project timelines. I developed and maintained web applications using HTML, CSS, JavaScript, and Python,
+            ensuring high-quality standards and adherence to best practices.
+            Furthermore, I am well-versed in cloud computing platforms such as AWS and Azure, as well as databases like
+            MySQL and MongoDB. My commitment to continuous learning and growth is evidenced by my ongoing exploration of
+            data structures and algorithms to further enhance my problem-solving skills.
+            Driven by a strong work ethic and a collaborative mindset, I am confident in my ability to contribute
+            positively to your organization. I am enthusiastic about the opportunity to apply my skills and knowledge to
+            meaningful projects that make a tangible impact. Thank you for considering my application. I look forward to
+            the possibility of contributing to your team's success.</p>
+          <br>
+
+          <h3 class="section-heading">Coding Profile</h3>
+
+          <div class="profile-links">
+            <div class="profile-link">
+              <a href="https://www.geeksforgeeks.org/user/gouravpandey_07/">
+                <img src="https://img.shields.io/badge/GeeksforGeeks-0A0A0A?logo=geeksforgeeks&amp;logoColor=white"
+                  alt="GeeksforGeeks">
+              </a>
+            </div>
+
+            <div class="profile-link">
+              <a href="https://leetcode.com/u/gourav_09/">
+                <img src="https://img.shields.io/badge/LeetCode-FFA116?logo=leetcode&amp;logoColor=white"
+                  alt="LeetCode">
+              </a>
+            </div>
+          </div>
+
+          <div class="profile-links">
+            <div class="profile-link">
+              <a href="https://www.naukri.com/code360/profile/gourav09">
+                <img src="https://img.shields.io/badge/Coding%20Ninjas-FF6F61?logo=codingninjas&amp;logoColor=white"
+                  alt="Coding Ninjas">
+              </a>
+            </div>
+
+            <div class="profile-link">
+              <a href="https://www.hackerrank.com/profile/pandeygourav09">
+                <img src="https://img.shields.io/badge/HackerRank-2EC866?logo=hackerrank&amp;logoColor=white"
+                  alt="HackerRank">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <footer class="footer">
+        <span class="footer__copyright">Copyright &copy; 2024 - Gourav Pandey</span>
+      </footer><br><br>
+
+
+
+
+
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
